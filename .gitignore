@@ -1,0 +1,12 @@
+.env
+*.env.local
+*.db
+__pycache__/
+*.py[cod]
+.venv/
+backend/.packages/
+node_modules/
+.next/
+dist/
+*.tsbuildinfo
+**/.pnpm-store/

@@ -1,0 +1,12 @@
+services:
+  api:
+    build: { context: ., dockerfile: backend/Dockerfile }
+    env_file: [{ path: backend/.env, required: false }]
+    environment: { FRONTEND_ORIGIN: "http://localhost:3000" }
+    ports: ["8000:8000"]
+    volumes: ["smb_data:/data"]
+  web:
+    build: { context: ., dockerfile: frontend/Dockerfile }
+    ports: ["3000:3000"]
+    depends_on: [api]
+volumes: { smb_data: {} }
